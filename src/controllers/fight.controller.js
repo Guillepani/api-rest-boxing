@@ -21,7 +21,18 @@ const getFights = async (req, res) => {
   }
 }
 
-// ADD FIGHTER (sin borrar y sin duplicados)
+// UPDATE COMPLETO
+const updateFight = async (req, res) => {
+  try {
+    const { id } = req.params
+    const updated = await Fight.findByIdAndUpdate(id, req.body, { new: true })
+    return res.status(200).json(updated)
+  } catch (error) {
+    return res.status(400).json(error)
+  }
+}
+
+// ADD FIGHTER TO FIGHT
 const addFighterToFight = async (req, res) => {
   try {
     const { id } = req.params
@@ -55,6 +66,7 @@ const deleteFight = async (req, res) => {
 module.exports = {
   createFight,
   getFights,
+  updateFight,
   addFighterToFight,
   deleteFight
 }
