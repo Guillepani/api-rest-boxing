@@ -1,7 +1,7 @@
 const express = require('express')
 const connectDB = require('./src/config/db')
-const fighterRoutes = require('./src/routes/fighter.routes')
-const fightRoutes = require('./src/routes/fight.routes')
+const fighterRoutes = require('./src/api/routes/fighter.routes')
+const fightRoutes = require('./src/api/routes/fight.routes')
 
 require('dotenv').config()
 

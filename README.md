@@ -1,33 +1,96 @@
 # API REST Boxing
 
-API REST desarrollada con Node.js, Express y MongoDB para gestionar boxeadores y combates.
+API REST desarrollada con Node.js, Express y MongoDB para gestionar boxeadores y combates, incluyendo relaciones entre colecciones y operaciones CRUD completas.
+
+---
 
 ## Tecnologías
 
 - Node.js
 - Express
-- MongoDB
+- MongoDB Atlas
 - Mongoose
+- Nodemon
+- Dotenv
+
+---
+
+## Instalación
+
+Clonar repositorio:
+
+```bash
+git clone https://github.com/Guillepani/api-rest-boxing.git
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Crear archivo `.env`:
+
+```env
+MONGO_URI=tu_uri_de_mongodb
+```
+
+---
+
+## Scripts
+
+| Script | Descripción |
+|---|---|
+| npm run dev | Inicia el servidor con nodemon |
+| npm run seed | Ejecuta la semilla de fighters |
+
+---
 
 ## Endpoints
 
 ### Fighters
 
-- GET /fighters → obtener todos
-- POST /fighters → crear
-- PUT /fighters/:id → actualizar
-- DELETE /fighters/:id → eliminar
+| Método | Endpoint | Descripción |
+|---|---|---|
+| GET | /fighters | Obtener todos los fighters |
+| POST | /fighters | Crear fighter |
+| PUT | /fighters/:id | Actualizar fighter |
+| DELETE | /fighters/:id | Eliminar fighter |
+
+---
 
 ### Fights
 
-- GET /fights → obtener todos (con fighters)
-- POST /fights → crear
-- DELETE /fights/:id → eliminar
+| Método | Endpoint | Descripción |
+|---|---|---|
+| GET | /fights | Obtener todos los fights |
+| POST | /fights | Crear fight |
+| PUT | /fights/:id | Actualizar fight |
+| POST | /fights/:id/fighters | Añadir fighter a fight |
+| DELETE | /fights/:id | Eliminar fight |
+
+---
 
 ## Seed
 
 Ejecutar:
-node src/utils/seed.js
+
+```bash
+npm run seed
+```
+
+---
+
+## Características
+
+- CRUD completo
+- Relaciones entre colecciones
+- Populate con Mongoose
+- Validación de ObjectIds
+- Prevención de referencias huérfanas
+- Variables de entorno protegidas
+
+---
 
 ## Autor
 

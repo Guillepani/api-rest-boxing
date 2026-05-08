@@ -4,6 +4,8 @@
   "description": "API REST con Node.js, Express y MongoDB para gestionar boxeadores y combates, incluyendo CRUD completo y relaciones entre colecciones.",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
+    "seed": "node src/utils/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

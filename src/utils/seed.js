@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const connectDB = require('../config/db')
-const Fighter = require('../models/fighter.model')
+const Fighter = require('../api/models/fighter.model')
 
 require('dotenv').config()
 
